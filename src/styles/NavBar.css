@@ -1,0 +1,57 @@
+.navBar__initial, .navBar__secondary{
+    width : 598px;
+    height: 98px;
+    border: 1px solid black;
+    background-color: darkgrey;
+    display: grid;
+    place-items: center;
+}
+
+.navBar__secondary{
+    height: 48px;
+    display : flex;
+    justify-content: space-around;
+}
+
+.navBar__testButton {
+    width: 98px;
+    height: 38px;
+    border: 1px solid black;
+    background-color: dodgerblue;
+    color: white;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.navBar__downloadButton {
+    width: 198px;
+    height: 38px;
+    border: 1px solid black;
+    background-color: dodgerblue;
+    color: white;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.navBar__uploadButton {
+    width: 98px;
+    height: 38px;
+    border: 1px solid black;
+    background-color: dodgerblue;
+    color: white;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+.navBar__checkButton {
+    width: 98px;
+    height: 38px;
+    border: 1px solid black;
+    background-color: dodgerblue;
+    color: white;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
