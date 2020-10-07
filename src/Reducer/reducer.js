@@ -13,13 +13,17 @@ const reducer = (state, action) => {
         case 'CONTROL_ARRAY':
             return { ...state, controlArray: action.payload }
         case 'CHECK_ARRAY':
-            return { ...state, checkArray: action.payload }
+                return { ...state, checkArray: action.payload }
+        case 'UPLOAD_ARRAY':
+                return {...state, checkArray: action.payload }
         case 'COMPARE_ARRAYS':
             let one = [...state.controlArray]
             let two = [...state.checkArray]
             let newFlag
+
             if (JSON.stringify(one) === JSON.stringify(two)) newFlag = true
             else newFlag = false
+            
             return { ...state, flag: newFlag }
         default:
             return { state }

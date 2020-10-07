@@ -1,7 +1,3 @@
-/* .grid__container{
-    display: flex;
-    flex-direction: column;
-} */
 
 .grid__squares {
     display: flex;
@@ -38,7 +34,6 @@
     place-items: center;
     cursor: pointer;
 }
-
 
 .clicked{
     background-color : rgb(124, 165, 243);

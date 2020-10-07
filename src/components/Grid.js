@@ -4,10 +4,10 @@ import { useStateValue } from "../reducer/StateProvider"
 
 var randomFive = []
 let order = 0
-var controlArray = []
+var isClickedArray = []
 var holder = []
 const Grid = () => {
-    const [{ ready, flag }, dispatch] = useStateValue();
+    const [{ ready, checkArray }, dispatch] = useStateValue();
     const [squares, setSquares] = useState([])
 
     const phrases = [
@@ -28,10 +28,8 @@ const Grid = () => {
     }, [ready])
 
     useEffect(()=>{
-        if(flag){
-            alert('Correct')
-        }
-    }, [flag])
+            if(checkArray.length) setSquares(checkArray)
+    }, [checkArray])
 
     const chooseRandom = () => {
         while (randomFive.length < 5) {
@@ -52,10 +50,10 @@ const Grid = () => {
 
     const choosePhrase = (number) => {
         var sorted = randomFive.slice().sort((a, b) => a - b)  //sorted ascending, randomFive protected
-        if (!controlArray.includes(number)) {
+        if (!isClickedArray.includes(number)) {
             holder[sorted[order]] = phrases[randomFive[number]]
             if (order < 4) order++
-            controlArray.push(number)
+            isClickedArray.push(number)
         }
 
         let button =  document.getElementById(`choice${number}`)
@@ -63,7 +61,7 @@ const Grid = () => {
         button.style.cursor = "default"
         
         setSquares([...holder])
-        if(controlArray.length === 5) dispatch({ type: 'CHECK_ARRAY', payload: holder })
+        if(isClickedArray.length === 5) dispatch({ type: 'CHECK_ARRAY', payload: holder })
     }
 
     const createChoises = () => {
@@ -79,8 +77,6 @@ const Grid = () => {
             )
         })
     }
-
-   
 
     return (
         <div className="grid__container">
