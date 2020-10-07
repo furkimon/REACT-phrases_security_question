@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/NavBar.css'
-import {useStateValue} from "../Reducer/StateProvider"
+import {useStateValue} from "../reducer/StateProvider"
 
 
 const NavBar = () => {
@@ -11,15 +11,15 @@ const NavBar = () => {
     }
 
     const check = () => {
-        dispatch({type : 'CHECK_WORDS', payload : ''})
+        dispatch({ type: 'COMPARE_ARRAYS'})
     }
     
 
     const initialNavBar = () => {
         return (
-            <div className="navBar__initial" >
+            <div className="navBar__initial">
                 <div className="navBar__downloadButton">Download</div>
-                <div className="navBar__testButton" onClick={toggle}>Ready</div>
+                <div className="navBar__testButton" onClick={()=>toggle()}>Ready</div>
             </div>
         )
     }
@@ -28,7 +28,7 @@ const NavBar = () => {
         return (
             <div className="navBar__secondary">
                 <div className="navBar__uploadButton">Upload</div>
-                <div className="navBar__checkButton">Check</div>
+                <div className="navBar__checkButton" onClick={()=>check()}>Check</div>
             </div>
         )
     }
